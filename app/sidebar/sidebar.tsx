@@ -1,14 +1,15 @@
 'use client'
 
 import *  as React from "react";
-import { House, Cube } from "@phosphor-icons/react";
+import { House, Receipt, ArrowsDownUp, ChartDonut, TipJar } from "@phosphor-icons/react";
+import { useNavigate, useLocation } from "react-router";
 
 const navigation = [
-  { name: 'Overview', href: '#', icon: <House size={24} weight="fill" />, current: true },
-  { name: 'Transactions', href: '#', icon: <Cube size={24} />, current: false },
-  { name: 'Budgets', href: '#', icon: <Cube size={24} />, current: false },
-  { name: 'Pots', href: '#', icon: <Cube size={24} />, current: false },
-  { name: 'Recurring Bills', href: '#', icon: <Cube size={24} />, current: false },
+  { name: 'Overview', href: '/', icon: <House size={24} weight="fill" /> },
+  { name: 'Transactions', href: '/transactions', icon: <ArrowsDownUp size={24} weight="fill" /> },
+  { name: 'Budgets', href: '/budgets', icon: <ChartDonut size={24} weight="fill" /> },
+  { name: 'Pots', href: '/pots', icon: <TipJar size={24} weight="fill" /> },
+  { name: 'Recurring Bills', href: '/recurring-bills', icon: <Receipt size={24} weight="fill" /> },
 ]
 
 function classNames(...classes: string[]) {
@@ -21,6 +22,13 @@ interface SidebarProps {
 }
 
 export function Sidebar({ children }: SidebarProps) {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [currentPath, setCurrentPath] = React.useState(location.pathname);
+
+  React.useEffect(() => {
+    setCurrentPath(location.pathname);
+  }, [location]);
 
   return (
     <React.Fragment>
@@ -38,29 +46,37 @@ export function Sidebar({ children }: SidebarProps) {
             <ul role="list" className="flex flex-1 flex-col gap-y-7">
               <li>
                 <ul role="list" className="space-y-1">
-                  {navigation.map((item) => (
-                    <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? 'bg-beige-100 text-beige-500 border-l-4 border-secondary-green text-preset-3'
-                            : 'text-grey-300 hover:bg-gray-300 hover:text-white text-preset-3',
-                          'group flex gap-x-4 rounded-r-lg px-6 py-4 text-base/6 font-medium',
-                        )}
-                      >
-                        <span
+                  {navigation.map((item) => {
+                    const isActive = currentPath === item.href;
+                    return (
+                      <li key={item.name}>
+                        <a
+                          href={item.href}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setCurrentPath(item.href);
+                            navigate(item.href);
+                          }}
                           className={classNames(
-                            'shrink-0',
-                            item.current ? 'text-secondary-green' : 'text-grey-300'
+                            isActive
+                              ? 'bg-beige-100 text-beige-500 border-l-4 border-secondary-green text-preset-3'
+                              : 'text-grey-300 hover:bg-gray-300 hover:text-white text-preset-3',
+                            'group flex gap-x-4 rounded-r-lg px-6 py-4 text-base/6 font-medium',
                           )}
                         >
-                          {item.icon}
-                        </span>
-                        {item.name}
-                      </a>
-                    </li>
-                  ))}
+                          <span
+                            className={classNames(
+                              'shrink-0',
+                              isActive ? 'text-secondary-green' : 'text-grey-300'
+                            )}
+                          >
+                            {item.icon}
+                          </span>
+                          {item.name}
+                        </a>
+                      </li>
+                    );
+                  })}
                 </ul>
               </li>
             </ul>
