@@ -1,3 +1,5 @@
+<img src="https://filedn.com/llQAcN2w6V9BAgE3sxSdnCJ/finance_app/README_INTRO.png" alt="Personal Finance App Preview" width="800"/>
+
 # Personal Finance App - Frontend Mentor Challenge
 
 ### Overview
