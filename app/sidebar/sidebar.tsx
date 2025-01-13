@@ -3,6 +3,7 @@
 import *  as React from "react";
 import { House, Receipt, ArrowsDownUp, ChartDonut, TipJar } from "@phosphor-icons/react";
 import { useNavigate, useLocation } from "react-router";
+import { classNames } from "~/utils/classNames";
 
 const navigation = [
   { name: 'Overview', href: '/', icon: <House size={24} weight="fill" /> },
@@ -11,10 +12,6 @@ const navigation = [
   { name: 'Pots', href: '/pots', icon: <TipJar size={24} weight="fill" /> },
   { name: 'Recurring Bills', href: '/recurring-bills', icon: <Receipt size={24} weight="fill" /> },
 ]
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
-}
 
 
 interface SidebarProps {
@@ -85,7 +82,7 @@ export function Sidebar({ children }: SidebarProps) {
       </div>
 
       <main className="py-10 lg:pl-72">
-        <div className="px-4 sm:px-6 lg:px-8">{children}</div>
+        <div className="px-4 sm:px-6 lg:px-10">{children}</div>
       </main>
     </React.Fragment>
   )
