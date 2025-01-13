@@ -10,7 +10,7 @@ export function meta({ }: Route.MetaArgs) {
 export default function Pots() {
   return (
     <div>
-      Pots
+      <h2 className="text-preset-1 font-semibold">Pots</h2>
     </div>
   );
 }

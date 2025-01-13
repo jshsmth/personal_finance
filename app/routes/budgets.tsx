@@ -10,7 +10,7 @@ export function meta({ }: Route.MetaArgs) {
 export default function Budgets() {
   return (
     <div>
-      Budgets
+      <h2 className="text-preset-1 font-semibold">Budgets</h2>
     </div>
   );
 }

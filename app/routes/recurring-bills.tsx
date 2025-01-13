@@ -10,7 +10,7 @@ export function meta({ }: Route.MetaArgs) {
 export default function RecurringBills() {
   return (
     <div>
-      Recurring Bills
+      <h2 className="text-preset-1 font-semibold">Recurring Bills</h2>
     </div>
   );
 }
