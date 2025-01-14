@@ -1,18 +1,35 @@
-'use client'
+"use client";
 
-import *  as React from "react";
-import { House, Receipt, ArrowsDownUp, ChartDonut, TipJar } from "@phosphor-icons/react";
+import * as React from "react";
+import {
+  House,
+  Receipt,
+  ArrowsDownUp,
+  ChartDonut,
+  TipJar,
+} from "@phosphor-icons/react";
 import { useNavigate, useLocation } from "react-router";
 import { classNames } from "~/utils/classNames";
 
 const navigation = [
-  { name: 'Overview', href: '/', icon: <House size={24} weight="fill" /> },
-  { name: 'Transactions', href: '/transactions', icon: <ArrowsDownUp size={24} weight="fill" /> },
-  { name: 'Budgets', href: '/budgets', icon: <ChartDonut size={24} weight="fill" /> },
-  { name: 'Pots', href: '/pots', icon: <TipJar size={24} weight="fill" /> },
-  { name: 'Recurring Bills', href: '/recurring-bills', icon: <Receipt size={24} weight="fill" /> },
-]
-
+  { name: "Overview", href: "/", icon: <House size={24} weight="fill" /> },
+  {
+    name: "Transactions",
+    href: "/transactions",
+    icon: <ArrowsDownUp size={24} weight="fill" />,
+  },
+  {
+    name: "Budgets",
+    href: "/budgets",
+    icon: <ChartDonut size={24} weight="fill" />,
+  },
+  { name: "Pots", href: "/pots", icon: <TipJar size={24} weight="fill" /> },
+  {
+    name: "Recurring Bills",
+    href: "/recurring-bills",
+    icon: <Receipt size={24} weight="fill" />,
+  },
+];
 
 interface SidebarProps {
   children: React.ReactNode;
@@ -56,15 +73,17 @@ export function Sidebar({ children }: SidebarProps) {
                           }}
                           className={classNames(
                             isActive
-                              ? 'bg-beige-100 text-beige-500 border-l-4 border-secondary-green text-preset-3'
-                              : 'text-grey-300 hover:bg-gray-300 hover:text-white text-preset-3',
-                            'group flex gap-x-4 rounded-r-lg px-6 py-4 text-base/6 font-medium',
+                              ? "bg-beige-100 text-beige-500 border-l-4 border-secondary-green text-preset-3"
+                              : "text-grey-300 hover:bg-gray-300 hover:text-white text-preset-3",
+                            "group flex gap-x-4 rounded-r-lg px-6 py-4 text-base/6 font-medium",
                           )}
                         >
                           <span
                             className={classNames(
-                              'shrink-0',
-                              isActive ? 'text-secondary-green' : 'text-grey-300'
+                              "shrink-0",
+                              isActive
+                                ? "text-secondary-green"
+                                : "text-grey-300",
                             )}
                           >
                             {item.icon}
@@ -85,5 +104,5 @@ export function Sidebar({ children }: SidebarProps) {
         <div className="px-4 sm:px-6 lg:px-10">{children}</div>
       </main>
     </React.Fragment>
-  )
+  );
 }

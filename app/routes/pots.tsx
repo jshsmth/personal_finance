@@ -1,6 +1,6 @@
 import type { Route } from "./+types/pots";
 
-export function meta({ }: Route.MetaArgs) {
+export function meta({}: Route.MetaArgs) {
   return [
     { title: "Pots | Personal Finance App" },
     { name: "pots", content: "Pots" },
