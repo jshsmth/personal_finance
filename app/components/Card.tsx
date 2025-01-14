@@ -22,7 +22,7 @@ export function Card({
         className,
       )}
     >
-      <div className="p-6 sm:p-6">{children}</div>
+      <div className="p-8">{children}</div>
     </div>
   );
 }

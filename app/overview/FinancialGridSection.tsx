@@ -1,6 +1,7 @@
 import { Card } from "~/components/Card";
 import { CaretRight } from "@phosphor-icons/react";
 import { PotsSection } from "./PotsSection";
+import { RecurringBillsSection } from "./RecurringBillsSection";
 
 export function FinancialGridSection() {
   return (
@@ -28,7 +29,7 @@ export function FinancialGridSection() {
 
         <Card height="h-[20.438rem]" backgroundColor="bg-white">
           <SectionHeader title="Recurring Bills" buttonText="See Details" />
-          Content
+          <RecurringBillsSection />
         </Card>
       </div>
     </div>
@@ -43,7 +44,7 @@ interface SectionHeaderProps {
 function SectionHeader({ title, buttonText }: SectionHeaderProps) {
   return (
     <div className="flex justify-between items-center mb-5">
-      <h3 className="text-preset-2 text-grey-900 font-semibold">{title}</h3>
+      <h3 className="text-preset-2 text-grey-900 font-bold">{title}</h3>
       <div className="flex items-center justify-center text-grey-500 text-preset-4">
         <button className="flex items-center text-grey-500 hover:text-grey-700">
           <span className="mr-2">{buttonText}</span>

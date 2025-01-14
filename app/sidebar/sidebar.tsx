@@ -47,7 +47,7 @@ export function Sidebar({ children }: SidebarProps) {
   return (
     <React.Fragment>
       {/* Static sidebar for desktop */}
-      <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col bg-grey-900 rounded-r-3xl">
+      <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-[18.75rem] lg:flex-col bg-grey-900 rounded-r-3xl">
         <div className="flex grow flex-col gap-y-4 overflow-y-auto pl-0 pr-8">
           <div className="flex h-24 shrink-0 items-center pl-8 pr-4">
             <img
@@ -100,7 +100,7 @@ export function Sidebar({ children }: SidebarProps) {
         </div>
       </div>
 
-      <main className="py-10 lg:pl-72">
+      <main className="py-10 lg:pl-[18.75rem]">
         <div className="px-4 sm:px-6 lg:px-10">{children}</div>
       </main>
     </React.Fragment>
