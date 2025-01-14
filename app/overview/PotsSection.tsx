@@ -1,7 +1,9 @@
 import { TipJar } from "@phosphor-icons/react";
-import { classNames } from "~/utils/classNames";
+import { appDataAtom } from "~/jotai/appDataAtom";
+import { useAtomValue } from "jotai";
 
 export function PotsSection() {
+  const appData = useAtomValue(appDataAtom);
   return (
     <div className="grid grid-cols-2 gap-5 p-4">
       <div className="bg-beige-100 h-[6.875rem] rounded-lg flex flex-col justify-center">
@@ -19,10 +21,9 @@ export function PotsSection() {
         </div>
       </div>
       <div className="grid grid-cols-2 gap-4">
-        <CategoryCard category="Savings" amount={159} palette="green" />
-        <CategoryCard category="Gift" amount={40} palette="cyan" />
-        <CategoryCard category="Concert Ticket" amount={110} palette="navy" />
-        <CategoryCard category="New Laptop" amount={10} palette="yellow" />
+        {appData.pots.slice(0, 4).map((pot) => (
+          <CategoryCard key={pot.name} category={pot.name} amount={pot.total} theme={pot.theme} />
+        ))}
       </div>
     </div>
   );
@@ -31,18 +32,15 @@ export function PotsSection() {
 interface CategoryCardProps {
   category: string;
   amount: number;
-  palette: "green" | "cyan" | "navy" | "yellow";
+  theme: string;
 }
 
-export function CategoryCard({ category, amount, palette }: CategoryCardProps) {
+export function CategoryCard({ category, amount, theme }: CategoryCardProps) {
   return (
-    <div className={classNames(
-      'bg-white border-l-4 rounded-sm h-[2.688rem]',
-      palette === 'green' ? 'border-secondary-green' : undefined,
-      palette === 'cyan' ? 'border-secondary-cyan' : undefined,
-      palette === 'navy' ? 'border-secondary-navy' : undefined,
-      palette === 'yellow' ? 'border-secondary-yellow' : undefined
-    )}>
+    <div 
+      className="bg-white rounded-sm h-[2.688rem]"
+      style={{ borderLeft: `4px solid ${theme}` }}
+    >
       <div className="pl-4">
         <p className="text-preset-4 text-grey-500">{category}</p>
         <p className="text-preset-4 font-bold text-grey-900">${amount}</p>
