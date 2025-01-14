@@ -1,5 +1,5 @@
 import { Card } from "~/components/Card";
-import { appDataAtom } from "~/jotai/appData";
+import { appDataAtom } from "~/jotai/appDataAtom";
 import { useAtomValue } from "jotai";
 import { formatCurrency } from "~/utils/formatCurrency";
 
