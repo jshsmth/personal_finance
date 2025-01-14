@@ -4,23 +4,23 @@ import { PotsSection } from "./PotsSection";
 
 export function FinancialGridSection() {
   return (
-    <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-4 h-[47.563rem]">
+    <div className="grid lg:grid-cols-2 sm:grid-cols-1 sm:h-auto gap-4 lg:h-[47.563rem]">
       <div>
-        <Card height="h-[13.625rem]" backgroundColor="bg-white">
+        <Card height="sm:h-auto lg:h-[13.625rem]" backgroundColor="bg-white">
           <SectionHeader title="Pots" buttonText="See Details" />
           <PotsSection />
         </Card>
 
         <div className="mt-6" />
 
-        <Card height="h-[32.438rem]" backgroundColor="bg-white">
+        <Card height="sm:h-auto lg:h-[32.438rem]" backgroundColor="bg-white">
           <SectionHeader title="Transactions" buttonText="View all" />
           Content
         </Card>
       </div>
 
       <div>
-        <Card height="h-[25.625rem]" backgroundColor="bg-white">
+        <Card height="sm:h-auto lg:h-[25.625rem]" backgroundColor="bg-white">
           <SectionHeader title="Budgets" buttonText="See Details" />
           Content
         </Card>

@@ -1,12 +1,13 @@
 import { TipJar } from "@phosphor-icons/react";
 import { appDataAtom } from "~/jotai/appDataAtom";
 import { useAtomValue } from "jotai";
+import { formatCurrency } from "~/utils/formatCurrency";
 
 export function PotsSection() {
   const appData = useAtomValue(appDataAtom);
   return (
-    <div className="grid grid-cols-2 gap-5 p-4">
-      <div className="bg-beige-100 h-[6.875rem] rounded-lg flex flex-col justify-center">
+    <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-5 p-4">
+      <div className="bg-beige-100 rounded-lg flex flex-col justify-center">
         <div className="flex items-center p-4">
           <TipJar
             size={40}
@@ -16,7 +17,9 @@ export function PotsSection() {
           <div>
             <p className="text-preset-4 text-grey-500">Total Saved</p>
             <div className="mt-3" />
-            <p className="text-preset-1 font-bold text-grey-900">$850</p>
+            <p className="text-preset-1 font-bold text-grey-900">
+              {formatCurrency(appData.pots.reduce((acc, pot) => acc + pot.total, 0))}
+            </p>
           </div>
         </div>
       </div>
