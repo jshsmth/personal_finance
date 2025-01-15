@@ -6,7 +6,7 @@ import { formatCurrency } from "~/utils/formatCurrency";
 export function PotsSection() {
   const appData = useAtomValue(appDataAtom);
   return (
-    <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-5 p-4">
+    <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-5">
       <div className="bg-beige-100 rounded-lg flex flex-col justify-center">
         <div className="flex items-center p-4">
           <TipJar
@@ -26,7 +26,13 @@ export function PotsSection() {
         </div>
       </div>
       <div className="grid grid-cols-2 gap-4">
-        {appData.pots.slice(0, 4).map((pot) => (
+        {/* Ordered as per figma design */}
+        {[
+          appData.pots.find(pot => pot.name === "Savings"),
+          appData.pots.find(pot => pot.name === "Gift"),
+          appData.pots.find(pot => pot.name === "Concert Ticket"),
+          appData.pots.find(pot => pot.name === "New Laptop")
+        ].map((pot) => pot && (
           <CategoryCard
             key={pot.name}
             category={pot.name}
@@ -52,7 +58,7 @@ export function CategoryCard({ category, amount, theme }: CategoryCardProps) {
       style={{ borderLeft: `4px solid ${theme}` }}
     >
       <div className="pl-4">
-        <p className="text-preset-4 text-grey-500">{category}</p>
+        <p className="text-preset-5 text-grey-500">{category}</p>
         <p className="text-preset-4 font-bold text-grey-900">${amount}</p>
       </div>
     </div>
