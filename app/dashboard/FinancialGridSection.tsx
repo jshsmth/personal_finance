@@ -2,6 +2,7 @@ import { Card } from "~/components/Card";
 import { CaretRight } from "@phosphor-icons/react";
 import { PotsSection } from "./PotsSection";
 import { RecurringBillsSection } from "./RecurringBillsSection";
+import { TransactionSection } from "./TransactionSection";
 
 export function FinancialGridSection() {
   return (
@@ -16,7 +17,7 @@ export function FinancialGridSection() {
 
         <Card height="sm:h-auto lg:h-[32.438rem]" backgroundColor="bg-white">
           <SectionHeader title="Transactions" buttonText="View all" />
-          Content
+          <TransactionSection />
         </Card>
       </div>
 
