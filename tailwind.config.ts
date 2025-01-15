@@ -36,6 +36,11 @@ export default {
       white: "#FFFFFF",
     },
     extend: {
+      screens: {
+        sm: "640px",
+        md: "1200px",
+        lg: "1550px",
+      },
       fontFamily: {
         sans: [
           "Public Sans",
