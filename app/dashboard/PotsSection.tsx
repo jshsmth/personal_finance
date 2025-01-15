@@ -18,14 +18,21 @@ export function PotsSection() {
             <p className="text-preset-4 text-grey-500">Total Saved</p>
             <div className="mt-3" />
             <p className="text-preset-1 font-bold text-grey-900">
-              {formatCurrency(appData.pots.reduce((acc, pot) => acc + pot.total, 0))}
+              {formatCurrency(
+                appData.pots.reduce((acc, pot) => acc + pot.total, 0),
+              )}
             </p>
           </div>
         </div>
       </div>
       <div className="grid grid-cols-2 gap-4">
         {appData.pots.slice(0, 4).map((pot) => (
-          <CategoryCard key={pot.name} category={pot.name} amount={pot.total} theme={pot.theme} />
+          <CategoryCard
+            key={pot.name}
+            category={pot.name}
+            amount={pot.total}
+            theme={pot.theme}
+          />
         ))}
       </div>
     </div>
@@ -40,7 +47,7 @@ interface CategoryCardProps {
 
 export function CategoryCard({ category, amount, theme }: CategoryCardProps) {
   return (
-    <div 
+    <div
       className="bg-white rounded-sm h-[2.688rem]"
       style={{ borderLeft: `4px solid ${theme}` }}
     >
