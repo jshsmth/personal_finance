@@ -40,7 +40,7 @@ export function TransactionSection() {
                           <span
                             className={
                               transaction.amount >= 0
-                                ? "text-secondary-green text-preset-4 font-semibold"
+                                ? "text-secondary-green text-preset-4 font-bold"
                                 : ""
                             }
                           >
