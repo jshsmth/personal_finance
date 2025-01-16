@@ -39,7 +39,7 @@ export default {
       screens: {
         sm: "640px",
         md: "1200px",
-        lg: "1550px",
+        lg: "1400px",
       },
       fontFamily: {
         sans: [

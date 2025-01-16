@@ -57,51 +57,49 @@ export function Sidebar({ children }: SidebarProps) {
             />
           </div>
           <nav className="flex flex-1 flex-col">
-            <ul role="list" className="flex flex-1 flex-col gap-y-7">
-              <li>
-                <ul role="list" className="space-y-1">
-                  {navigation.map((item) => {
-                    const isActive = currentPath === item.href;
-                    return (
-                      <li key={item.name}>
-                        <a
-                          href={item.href}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            setCurrentPath(item.href);
-                            navigate(item.href);
-                          }}
-                          className={classNames(
-                            isActive
-                              ? "bg-beige-100 text-beige-500 border-l-4 border-secondary-green text-preset-3"
-                              : "text-grey-300 hover:bg-gray-300 hover:text-white text-preset-3",
-                            "group flex gap-x-4 rounded-r-lg px-6 py-4 text-base/6 font-medium",
-                          )}
-                        >
-                          <span
-                            className={classNames(
-                              "shrink-0",
-                              isActive
-                                ? "text-secondary-green"
-                                : "text-grey-300",
-                            )}
-                          >
-                            {item.icon}
-                          </span>
-                          {item.name}
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </li>
+            <ul role="list" className="space-y-1">
+              {navigation.map((item) => {
+                const isActive = currentPath === item.href;
+                return (
+                  <li key={item.name}>
+                    <a
+                      href={item.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setCurrentPath(item.href);
+                        navigate(item.href);
+                      }}
+                      className={classNames(
+                        isActive
+                          ? "bg-beige-100 text-beige-500 border-l-4 border-secondary-green text-preset-3"
+                          : "text-grey-300 hover:bg-gray-300 hover:text-white text-preset-3",
+                        "group flex gap-x-4 rounded-r-lg px-6 py-4 text-base/6 font-medium",
+                      )}
+                    >
+                      <span
+                        className={classNames(
+                          "shrink-0",
+                          isActive ? "text-secondary-green" : "text-grey-300",
+                        )}
+                      >
+                        {item.icon}
+                      </span>
+                      {item.name}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
         </div>
       </div>
 
+      {/* Tablet sidebar */}
+
+      {/* Mobile sidebar */}
+
       <main className="py-10 lg:pl-[18.75rem]">
-        <div className="px-4 sm:px-6 lg:px-10">{children}</div>
+        <div className="px-4 sm:px-6 lg:px-10 md:pb-20">{children}</div>
       </main>
     </React.Fragment>
   );
