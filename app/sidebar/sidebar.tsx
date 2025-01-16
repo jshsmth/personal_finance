@@ -95,7 +95,7 @@ export function Sidebar({ children }: SidebarProps) {
       </div>
 
       {/* Tablet sidebar */}
-      <div className="lg:hidden md:block hidden fixed bottom-0 left-0 right-0 z-50 bg-grey-900 h-[4.625rem]">
+      <div className="lg:hidden md:block hidden fixed bottom-0 left-0 right-0 z-50 bg-grey-900 h-[4.625rem] rounded-t-md">
         <nav className="h-full max-w-[80%] mx-auto">
           <ul role="list" className="flex justify-between items-center h-full">
             {navigation.map((item) => {
@@ -130,7 +130,7 @@ export function Sidebar({ children }: SidebarProps) {
       </div>
 
       {/* Mobile sidebar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-grey-900 h-14">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-grey-900 h-14 rounded-t-md">
         <nav className="h-full max-w-[80%] mx-auto">
           <ul role="list" className="flex justify-between items-center h-full">
             {navigation.map((item) => {

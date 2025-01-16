@@ -3,6 +3,7 @@ import { CaretRight } from "@phosphor-icons/react";
 import { PotsSection } from "./PotsSection";
 import { RecurringBillsSection } from "./RecurringBillsSection";
 import { TransactionSection } from "./TransactionSection";
+import { BudgetSection } from "./BudgetSection";
 
 export function FinancialGridSection() {
   return (
@@ -24,7 +25,7 @@ export function FinancialGridSection() {
       <div>
         <Card height="sm:h-auto lg:h-[25.625rem]" backgroundColor="bg-white">
           <SectionHeader title="Budgets" buttonText="See Details" />
-          Content
+          <BudgetSection />
         </Card>
         <div className="mt-6" />
 
