@@ -95,11 +95,76 @@ export function Sidebar({ children }: SidebarProps) {
       </div>
 
       {/* Tablet sidebar */}
+      <div className="lg:hidden md:block hidden fixed bottom-0 left-0 right-0 z-50 bg-grey-900 h-[4.625rem]">
+        <nav className="h-full max-w-[80%] mx-auto">
+          <ul role="list" className="flex justify-between items-center h-full">
+            {navigation.map((item) => {
+              const isActive = currentPath === item.href;
+              return (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setCurrentPath(item.href);
+                      navigate(item.href);
+                    }}
+                    className={classNames(
+                      "flex flex-col items-center gap-1 py-2 px-4",
+                      isActive 
+                        ? "text-grey-900 bg-beige-100 border-b-4 border-secondary-green rounded-t-xl" 
+                        : "text-grey-300"
+                    )}
+                  >
+                    <span className={classNames(
+                      "shrink-0",
+                      isActive ? "text-secondary-green" : "text-grey-300"
+                    )}>{item.icon}</span>
+                    <span className="text-xs font-medium">{item.name}</span>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </div>
 
       {/* Mobile sidebar */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-grey-900 h-14">
+        <nav className="h-full max-w-[80%] mx-auto">
+          <ul role="list" className="flex justify-between items-center h-full">
+            {navigation.map((item) => {
+              const isActive = currentPath === item.href;
+              return (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setCurrentPath(item.href);
+                      navigate(item.href);
+                    }}
+                    className={classNames(
+                      "flex items-center p-3",
+                      isActive 
+                        ? "text-grey-900 bg-beige-100 border-b-4 border-secondary-green rounded-t-xl" 
+                        : "text-grey-300"
+                    )}
+                  >
+                    <span className={classNames(
+                      "shrink-0",
+                      isActive ? "text-secondary-green" : "text-grey-300"
+                    )}>{item.icon}</span>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </div>
 
       <main className="py-10 lg:pl-[18.75rem]">
-        <div className="px-4 sm:px-6 lg:px-10 md:pb-20">{children}</div>
+        <div className="px-4 sm:px-6 lg:px-10 sm:pb-20">{children}</div>
       </main>
     </React.Fragment>
   );

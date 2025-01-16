@@ -37,8 +37,8 @@ export default {
     },
     extend: {
       screens: {
-        sm: "640px",
-        md: "1200px",
+        sm: "480px",
+        md: "768px",
         lg: "1400px",
       },
       fontFamily: {
