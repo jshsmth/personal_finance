@@ -73,7 +73,7 @@ export function Sidebar({ children }: SidebarProps) {
                         isActive
                           ? "bg-beige-100 text-beige-500 border-l-4 border-secondary-green text-preset-3"
                           : "text-grey-300 hover:bg-gray-300 hover:text-white text-preset-3",
-                        "group flex gap-x-4 rounded-r-lg px-6 py-4 text-base/6 font-medium",
+                        "group flex gap-x-4 rounded-r-lg px-6 py-4 text-base/6 font-medium transition-all duration-200 ease-in-out",
                       )}
                     >
                       <span
@@ -110,9 +110,9 @@ export function Sidebar({ children }: SidebarProps) {
                       navigate(item.href);
                     }}
                     className={classNames(
-                      "flex flex-col items-center gap-1 py-2 px-4",
+                      "flex flex-col items-center gap-1 py-2 px-4 transition-all duration-200 ease-in-out",
                       isActive 
-                        ? "text-grey-900 bg-beige-100 border-b-4 border-secondary-green rounded-t-xl" 
+                        ? "text-grey-900 bg-beige-100 border-b-4 border-secondary-green rounded-t-xl w-[6.5rem] whitespace-nowrap" 
                         : "text-grey-300"
                     )}
                   >
@@ -145,10 +145,10 @@ export function Sidebar({ children }: SidebarProps) {
                       navigate(item.href);
                     }}
                     className={classNames(
-                      "flex items-center p-3",
+                      "flex p-3 transition-all duration-200 ease-in-out",
                       isActive 
-                        ? "text-grey-900 bg-beige-100 border-b-4 border-secondary-green rounded-t-xl" 
-                        : "text-grey-300"
+                        ? "text-grey-900 bg-beige-100 border-b-4 border-secondary-green rounded-t-xl w-[4.163rem] items-center justify-center" 
+                        : "text-grey-300 items-center justify-center"
                     )}
                   >
                     <span className={classNames(
