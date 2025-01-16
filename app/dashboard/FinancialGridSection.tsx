@@ -6,29 +6,29 @@ import { TransactionSection } from "./TransactionSection";
 
 export function FinancialGridSection() {
   return (
-    <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-6">
-      <div className="flex flex-col">
-        <Card height="h-auto min-h-[30vh]" backgroundColor="bg-white">
+    <div className="grid lg:grid-cols-2 sm:grid-cols-1 sm:h-auto gap-6 lg:h-[47.563rem]">
+      <div>
+        <Card height="sm:h-auto lg:h-[13.625rem]" backgroundColor="bg-white">
           <SectionHeader title="Pots" buttonText="See Details" />
           <PotsSection />
         </Card>
 
-        <div className="grow mt-6" />
+        <div className="mt-6" />
 
-        <Card height="h-auto" backgroundColor="bg-white">
+        <Card height="sm:h-auto lg:h-[32.438rem]" backgroundColor="bg-white">
           <SectionHeader title="Transactions" buttonText="View all" />
           <TransactionSection />
         </Card>
       </div>
 
-      <div className="flex flex-col">
-        <Card height="h-auto min-h-[45vh]" backgroundColor="bg-white">
+      <div>
+        <Card height="sm:h-auto lg:h-[25.625rem]" backgroundColor="bg-white">
           <SectionHeader title="Budgets" buttonText="See Details" />
           Content
         </Card>
-        <div className="grow mt-6" />
+        <div className="mt-6" />
 
-        <Card height="h-auto" backgroundColor="bg-white">
+        <Card height="h-[20.438rem]" backgroundColor="bg-white">
           <SectionHeader title="Recurring Bills" buttonText="See Details" />
           <RecurringBillsSection />
         </Card>
@@ -36,6 +36,7 @@ export function FinancialGridSection() {
     </div>
   );
 }
+
 
 interface SectionHeaderProps {
   title: string;
