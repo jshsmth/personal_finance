@@ -112,7 +112,7 @@ export function Sidebar({ children }: SidebarProps) {
                     className={classNames(
                       "flex flex-col items-center gap-1 py-2 px-4 transition-all duration-200 ease-in-out",
                       isActive 
-                        ? "text-grey-900 bg-beige-100 border-b-4 border-secondary-green rounded-t-xl w-[6.5rem] whitespace-nowrap" 
+                        ? "text-grey-900 bg-beige-100 border-b-4 border-secondary-green rounded-t-md w-[6.5rem] whitespace-nowrap" 
                         : "text-grey-300"
                     )}
                   >
@@ -147,7 +147,7 @@ export function Sidebar({ children }: SidebarProps) {
                     className={classNames(
                       "flex p-3 transition-all duration-200 ease-in-out",
                       isActive 
-                        ? "text-grey-900 bg-beige-100 border-b-4 border-secondary-green rounded-t-xl w-[4.163rem] items-center justify-center" 
+                        ? "text-grey-900 bg-beige-100 border-b-4 border-secondary-green rounded-t-md w-[4.163rem] items-center justify-center" 
                         : "text-grey-300 items-center justify-center"
                     )}
                   >
