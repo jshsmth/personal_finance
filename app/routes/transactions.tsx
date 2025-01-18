@@ -1,3 +1,4 @@
+import { TransactionsContainer } from "~/transactions/TransactionsContainer";
 import type { Route } from "./+types/transactions";
 
 export function meta({}: Route.MetaArgs) {
@@ -8,9 +9,5 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Transactions() {
-  return (
-    <div>
-      <h2 className="text-preset-1 font-semibold">Transactions</h2>
-    </div>
-  );
+  return <TransactionsContainer />
 }
