@@ -35,13 +35,13 @@ export function TransactionsContainer() {
                         </th>
                         <th
                           scope="col"
-                          className="px-3 py-3.5 text-left text-preset-5 font-normal text-grey-500 hidden md:block"
+                          className="px-3 py-3.5 text-left text-preset-5 font-normal text-grey-500 hidden md:table-cell"
                         >
                           Category
                         </th>
                         <th
                           scope="col"
-                          className="px-3 py-3.5 text-left text-preset-5 font-normal text-grey-500 hidden md:bloc"
+                          className="px-3 py-3.5 text-left text-preset-5 font-normal text-grey-500 hidden md:table-cell"
                         >
                           Transaction Date
                         </th>
@@ -78,10 +78,10 @@ export function TransactionsContainer() {
                                 </div>
                               </div>
                             </td>
-                            <td className="text-preset-5 text-grey-500 px-3 py-3.5 hidden md:block">
+                            <td className="text-preset-5 text-grey-500 px-3 py-3.5 hidden md:table-cell">
                               {transaction.category}
                             </td>
-                            <td className="text-preset-5 text-grey-500 px-3 py-3.5 hidden md:block">
+                            <td className="text-preset-5 text-grey-500 px-3 py-3.5 hidden md:table-cell">
                               {new Date(
                                 transaction.date,
                               ).toLocaleDateString("en-GB", {
