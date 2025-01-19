@@ -11,7 +11,8 @@ import { Funnel, FileArrowDown } from "@phosphor-icons/react";
 export function TransactionsContainer() {
   const appData = useAtomValue(appDataAtom);
   const [selectedSort, setSelectedSort] = React.useState("Latest");
-  const [selectedCategory, setSelectedCategory] = React.useState("All Transactions");
+  const [selectedCategory, setSelectedCategory] =
+    React.useState("All Transactions");
 
   return (
     <React.Fragment>
@@ -30,16 +31,34 @@ export function TransactionsContainer() {
               <Dropdown
                 label="Sort by"
                 buttonText={selectedSort}
-                items={["Latest", "Oldest", "A to Z", "Z to A", "Highest", "Lowest"]}
+                items={[
+                  "Latest",
+                  "Oldest",
+                  "A to Z",
+                  "Z to A",
+                  "Highest",
+                  "Lowest",
+                ]}
                 onSelect={(item) => setSelectedSort(item)}
-                MobileIcon={Funnel}
+                MobileIcon={FileArrowDown}
               />
               <Dropdown
                 label="Category"
                 buttonText={selectedCategory}
-                items={["All Transactions", "Entertainment", "Bills", "Groceries", "Dining Out", "Transportation", "Personal Care", "Health", "Education", "Other"]}
+                items={[
+                  "All Transactions",
+                  "Entertainment",
+                  "Bills",
+                  "Groceries",
+                  "Dining Out",
+                  "Transportation",
+                  "Personal Care",
+                  "Health",
+                  "Education",
+                  "Other",
+                ]}
                 onSelect={(item) => setSelectedCategory(item)}
-                MobileIcon={FileArrowDown}
+                MobileIcon={Funnel}
               />
             </div>
           </div>

@@ -1,25 +1,49 @@
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { CaretDown, type IconWeight } from '@phosphor-icons/react'
-import type { ComponentType } from 'react'
+import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
+import { CaretDown, type IconWeight } from "@phosphor-icons/react";
+import type { ComponentType } from "react";
 
 interface DropdownProps {
-  label?: string
-  buttonText: string
-  items: string[]
-  onSelect?: (item: string) => void
-  MobileIcon?: ComponentType<{ className?: string, weight?: IconWeight, size?: number }>
+  label?: string;
+  buttonText: string;
+  items: string[];
+  onSelect?: (item: string) => void;
+  MobileIcon?: ComponentType<{
+    className?: string;
+    weight?: IconWeight;
+    size?: number;
+  }>;
 }
 
-export function Dropdown({ label, buttonText, items, onSelect, MobileIcon }: DropdownProps) {
+export function Dropdown({
+  label,
+  buttonText,
+  items,
+  onSelect,
+  MobileIcon,
+}: DropdownProps) {
   return (
     <div className="flex items-center gap-2">
-      {label && <span className="hidden md:inline text-preset-4 font-normal text-grey-500">{label}</span>}
+      {label && (
+        <span className="hidden md:inline text-preset-4 font-normal text-grey-500">
+          {label}
+        </span>
+      )}
       <Menu as="div" className="relative inline-block text-left">
         <div>
           <MenuButton className="md:inline-flex md:w-full md:items-center md:justify-center md:gap-x-1.5 md:rounded-md md:bg-white md:px-4 md:py-3 md:text-preset-4 md:text-grey-900 md:shadow-sm md:ring-1 md:ring-inset md:ring-beige-500 md:hover:bg-gray-50">
-            {MobileIcon && <MobileIcon className="block md:hidden text-grey-900" weight="fill" size={20} />}
+            {MobileIcon && (
+              <MobileIcon
+                className="block md:hidden text-grey-900"
+                weight="fill"
+                size={20}
+              />
+            )}
             <span className="hidden md:inline">{buttonText}</span>
-            <CaretDown aria-hidden="true" weight="fill" className="hidden md:inline text-grey-900 -mt-0.5" />
+            <CaretDown
+              aria-hidden="true"
+              weight="fill"
+              className="hidden md:inline text-grey-900 -mt-0.5"
+            />
           </MenuButton>
         </div>
 
@@ -42,5 +66,5 @@ export function Dropdown({ label, buttonText, items, onSelect, MobileIcon }: Dro
         </MenuItems>
       </Menu>
     </div>
-  )
+  );
 }
