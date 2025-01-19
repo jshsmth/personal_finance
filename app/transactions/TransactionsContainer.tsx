@@ -4,13 +4,14 @@ import * as React from "react";
 import { Card } from "~/components/Card";
 // import Dropdown from "~/components/Dropdown";
 import { SearchInput } from "~/components/SearchInput";
+import { Pagination } from "~/components/Pagination";
 export function TransactionsContainer() {
   const appData = useAtomValue(appDataAtom);
   return (
     <React.Fragment>
       <div>
         <h2 className="text-preset-1 font-semibold mb-8">Transactions</h2>
-        <Card height="h-[61.438rem]" backgroundColor="bg-white">
+        <Card height="h-[61.438rem]" backgroundColor="bg-white" className="rounded-b-none">
           <div className="flex items-center justify-between">
             <div className="grow-[0.2]">
               <SearchInput />
@@ -123,6 +124,7 @@ export function TransactionsContainer() {
             </div>
           </div>
         </Card>
+        <Pagination currentPage={2} totalPages={5} />
       </div>
     </React.Fragment>
   );
