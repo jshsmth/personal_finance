@@ -6,6 +6,7 @@ import { Card } from "~/components/Card";
 import { SearchInput } from "~/components/SearchInput";
 import { Pagination } from "~/components/Pagination";
 import { Dropdown } from "~/components/Dropdown";
+import { Funnel, FileArrowDown } from "@phosphor-icons/react";
 
 export function TransactionsContainer() {
   const appData = useAtomValue(appDataAtom);
@@ -22,7 +23,7 @@ export function TransactionsContainer() {
           className="rounded-b-none"
         >
           <div className="flex items-center justify-between">
-            <div className="grow-[0.2]">
+            <div className="sm:grow sm:mr-4 md:mr-0 md:grow-[0.2]">
               <SearchInput />
             </div>
             <div className="flex items-center gap-4">
@@ -31,12 +32,14 @@ export function TransactionsContainer() {
                 buttonText={selectedSort}
                 items={["Latest", "Oldest", "A to Z", "Z to A", "Highest", "Lowest"]}
                 onSelect={(item) => setSelectedSort(item)}
+                MobileIcon={Funnel}
               />
               <Dropdown
                 label="Category"
                 buttonText={selectedCategory}
                 items={["All Transactions", "Entertainment", "Bills", "Groceries", "Dining Out", "Transportation", "Personal Care", "Health", "Education", "Other"]}
                 onSelect={(item) => setSelectedCategory(item)}
+                MobileIcon={FileArrowDown}
               />
             </div>
           </div>
