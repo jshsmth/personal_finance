@@ -8,7 +8,7 @@ export function Pagination({
   totalPages: number;
 }) {
   return (
-    <nav className="flex items-center justify-between px-4 py-8 sm:px-0 bg-white rounded-b-md">
+    <nav className="flex items-center justify-between px-4 py-8 sm:px-0 bg-white rounded-b-md shadow">
       <div className="flex w-0 flex-1 ml-4">
         <button
           onClick={() => {}}
@@ -16,11 +16,11 @@ export function Pagination({
         >
           <div className="flex items-center justify-center gap-4">
             <CaretLeft weight="fill" size={16} />
-            <span>Prev</span>
+            <span className="hidden md:block">Prev</span>
           </div>
         </button>
       </div>
-      <div className="hidden md:-mt-px md:flex gap-2">
+      <div className="hidden md:flex gap-2">
         {Array.from({ length: totalPages }, (_, index) => index + 1).map(
           (pageNumber) => (
             <button
@@ -44,7 +44,7 @@ export function Pagination({
           className="inline-flex items-center justify-center px-4 py-2 border border-beige-500 hover:border-beige-500 hover:bg-grey-900 rounded-md hover:text-white text-grey-500 font-normal text-preset-4"
         >
           <div className="flex items-center justify-center gap-4">
-            <span>Next</span>
+            <span className="hidden md:block">Next</span>
             <CaretRight weight="fill" size={16} />
           </div>
         </button>
