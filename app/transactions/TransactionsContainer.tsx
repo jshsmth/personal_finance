@@ -11,8 +11,14 @@ export function TransactionsContainer() {
       <div>
         <h2 className="text-preset-1 font-semibold mb-8">Transactions</h2>
         <Card height="h-[61.438rem]" backgroundColor="bg-white">
-          <div>
-            <SearchInput />
+          <div className="flex items-center justify-between">
+            <div className="grow-[0.2]">
+              <SearchInput />
+            </div>
+            <div className="flex items-center gap-2">
+                <p>Dropdown 1</p>
+                <p>Dropdown 2</p>
+            </div>
           </div>
           <div>
             <div className="mt-8 flow-root">
@@ -29,13 +35,13 @@ export function TransactionsContainer() {
                         </th>
                         <th
                           scope="col"
-                          className="px-3 py-3.5 text-left text-preset-5 font-normal text-grey-500"
+                          className="px-3 py-3.5 text-left text-preset-5 font-normal text-grey-500 hidden md:block"
                         >
                           Category
                         </th>
                         <th
                           scope="col"
-                          className="px-3 py-3.5 text-left text-preset-5 font-normal text-grey-500"
+                          className="px-3 py-3.5 text-left text-preset-5 font-normal text-grey-500 hidden md:bloc"
                         >
                           Transaction Date
                         </th>
@@ -72,10 +78,10 @@ export function TransactionsContainer() {
                                 </div>
                               </div>
                             </td>
-                            <td className="text-preset-5 text-grey-500 px-3 py-3.5 ">
+                            <td className="text-preset-5 text-grey-500 px-3 py-3.5 hidden md:block">
                               {transaction.category}
                             </td>
-                            <td className="text-preset-5 text-grey-500 px-3 py-3.5 ">
+                            <td className="text-preset-5 text-grey-500 px-3 py-3.5 hidden md:block">
                               {new Date(
                                 transaction.date,
                               ).toLocaleDateString("en-GB", {
