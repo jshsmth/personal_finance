@@ -28,7 +28,28 @@ export function BudgetSection() {
     <div className="flex items-center justify-around">
       <div style={{ width: 250, height: 300 }}>
         <ResponsiveContainer>
-          <PieChart  className="pr-0 mr0">
+          <PieChart className="pr-0 mr0">
+            <text
+              x="50%"
+              y="50%"
+              textAnchor="middle"
+              dominantBaseline="middle"
+            >
+              <tspan
+                x="50%"
+                dy="-15"
+                className="text-preset-1 font-semibold text-grey-900"
+              >
+                $338
+              </tspan>
+              <tspan
+                x="50%"
+                dy="35"
+                className="text-preset-5 text-grey-500"
+              >
+                of {appData.budgets.reduce((acc, budget) => acc + budget.maximum, 0)} limit
+              </tspan>
+            </text>
             <Pie
               data={data}
               cx="50%"
