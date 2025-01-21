@@ -1,26 +1,8 @@
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
-import resolveConfig from "tailwindcss/resolveConfig";
-import tailwindConfig from "../../tailwind.config";
 import { CategoryCard } from "./shared/CategoryCard";
 import { appDataAtom } from "~/jotai/appDataAtom";
 import { useAtomValue } from "jotai";
-
-const fullConfig = resolveConfig(tailwindConfig);
-const colors = fullConfig.theme.colors;
-
-const data = [
-  { name: "Group A", value: 120 },
-  { name: "Group B", value: 25 },
-  { name: "Group C", value: 50 },
-  { name: "Group D", value: 50 },
-];
-
-const COLORS = [
-  colors.secondary.cyan,
-  colors.secondary.green,
-  colors.secondary.navy,
-  colors.secondary.yellow,
-];
+import { COLORS, data } from "~/utils/constants";
 
 export function BudgetSection() {
   const appData = useAtomValue(appDataAtom);
@@ -29,12 +11,7 @@ export function BudgetSection() {
       <div style={{ width: 250, height: 300 }}>
         <ResponsiveContainer>
           <PieChart className="pr-0 mr0">
-            <text
-              x="50%"
-              y="50%"
-              textAnchor="middle"
-              dominantBaseline="middle"
-            >
+            <text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle">
               <tspan
                 x="50%"
                 dy="-15"
@@ -42,12 +19,13 @@ export function BudgetSection() {
               >
                 $338
               </tspan>
-              <tspan
-                x="50%"
-                dy="35"
-                className="text-preset-5 text-grey-500"
-              >
-                of {appData.budgets.reduce((acc, budget) => acc + budget.maximum, 0)} limit
+              <tspan x="50%" dy="35" className="text-preset-5 text-grey-500">
+                of{" "}
+                {appData.budgets.reduce(
+                  (acc, budget) => acc + budget.maximum,
+                  0,
+                )}{" "}
+                limit
               </tspan>
             </text>
             <Pie
@@ -71,22 +49,29 @@ export function BudgetSection() {
         </ResponsiveContainer>
       </div>
       <div>
-      <div className="grid grid-cols-1 gap-4">
-        {/* Ordered as per figma design */}
-        {[
-          appData.budgets.find(budget => budget.category === "Entertainment"),
-          appData.budgets.find(budget => budget.category === "Bills"),
-          appData.budgets.find(budget => budget.category === "Dining Out"),
-          appData.budgets.find(budget => budget.category === "Personal Care")
-        ].map((budget) => budget && (
-          <CategoryCard
-            key={budget.category}
-            category={budget.category}
-            amount={budget.maximum}
-            theme={budget.theme}
-          />
-        ))}
-      </div>
+        <div className="grid grid-cols-1 gap-4">
+          {/* Ordered as per figma design */}
+          {[
+            appData.budgets.find(
+              (budget) => budget.category === "Entertainment",
+            ),
+            appData.budgets.find((budget) => budget.category === "Bills"),
+            appData.budgets.find((budget) => budget.category === "Dining Out"),
+            appData.budgets.find(
+              (budget) => budget.category === "Personal Care",
+            ),
+          ].map(
+            (budget) =>
+              budget && (
+                <CategoryCard
+                  key={budget.category}
+                  category={budget.category}
+                  amount={budget.maximum}
+                  theme={budget.theme}
+                />
+              ),
+          )}
+        </div>
       </div>
     </div>
   );

@@ -29,20 +29,22 @@ export function PotsSection() {
       <div className="grid grid-cols-2 gap-4">
         {/* Ordered as per figma design */}
         {[
-          appData.pots.find(pot => pot.name === "Savings"),
-          appData.pots.find(pot => pot.name === "Gift"),
-          appData.pots.find(pot => pot.name === "Concert Ticket"),
-          appData.pots.find(pot => pot.name === "New Laptop")
-        ].map((pot) => pot && (
-          <CategoryCard
-            key={pot.name}
-            category={pot.name}
-            amount={pot.total}
-            theme={pot.theme}
-          />
-        ))}
+          appData.pots.find((pot) => pot.name === "Savings"),
+          appData.pots.find((pot) => pot.name === "Gift"),
+          appData.pots.find((pot) => pot.name === "Concert Ticket"),
+          appData.pots.find((pot) => pot.name === "New Laptop"),
+        ].map(
+          (pot) =>
+            pot && (
+              <CategoryCard
+                key={pot.name}
+                category={pot.name}
+                amount={pot.total}
+                theme={pot.theme}
+              />
+            ),
+        )}
       </div>
     </div>
   );
 }
-

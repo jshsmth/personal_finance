@@ -38,7 +38,6 @@ export function FinancialGridSection() {
   );
 }
 
-
 interface SectionHeaderProps {
   title: string;
   buttonText: string;

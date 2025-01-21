@@ -9,5 +9,5 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Transactions() {
-  return <TransactionsContainer />
+  return <TransactionsContainer />;
 }

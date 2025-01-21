@@ -111,15 +111,19 @@ export function Sidebar({ children }: SidebarProps) {
                     }}
                     className={classNames(
                       "flex flex-col items-center gap-1 py-2 px-4 transition-all duration-200 ease-in-out",
-                      isActive 
-                        ? "text-grey-900 bg-beige-100 border-b-4 border-secondary-green rounded-t-md w-[6.5rem] whitespace-nowrap" 
-                        : "text-grey-300"
+                      isActive
+                        ? "text-grey-900 bg-beige-100 border-b-4 border-secondary-green rounded-t-md w-[6.5rem] whitespace-nowrap"
+                        : "text-grey-300",
                     )}
                   >
-                    <span className={classNames(
-                      "shrink-0",
-                      isActive ? "text-secondary-green" : "text-grey-300"
-                    )}>{item.icon}</span>
+                    <span
+                      className={classNames(
+                        "shrink-0",
+                        isActive ? "text-secondary-green" : "text-grey-300",
+                      )}
+                    >
+                      {item.icon}
+                    </span>
                     <span className="text-xs font-medium">{item.name}</span>
                   </a>
                 </li>
@@ -146,15 +150,19 @@ export function Sidebar({ children }: SidebarProps) {
                     }}
                     className={classNames(
                       "flex p-3 transition-all duration-200 ease-in-out",
-                      isActive 
-                        ? "text-grey-900 bg-beige-100 border-b-4 border-secondary-green rounded-t-md w-[4.163rem] items-center justify-center" 
-                        : "text-grey-300 items-center justify-center"
+                      isActive
+                        ? "text-grey-900 bg-beige-100 border-b-4 border-secondary-green rounded-t-md w-[4.163rem] items-center justify-center"
+                        : "text-grey-300 items-center justify-center",
                     )}
                   >
-                    <span className={classNames(
-                      "shrink-0",
-                      isActive ? "text-secondary-green" : "text-grey-300"
-                    )}>{item.icon}</span>
+                    <span
+                      className={classNames(
+                        "shrink-0",
+                        isActive ? "text-secondary-green" : "text-grey-300",
+                      )}
+                    >
+                      {item.icon}
+                    </span>
                   </a>
                 </li>
               );

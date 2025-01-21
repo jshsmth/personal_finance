@@ -9,7 +9,5 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Budgets() {
-  return (
-    <BudgetsContainer />
-  );
+  return <BudgetsContainer />;
 }
