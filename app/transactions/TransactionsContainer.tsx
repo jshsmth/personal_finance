@@ -2,7 +2,7 @@ import * as React from "react";
 import { Card } from "~/components/Card";
 // import Dropdown from "~/components/Dropdown";
 import { SearchInput } from "~/components/SearchInput";
-import { Pagination } from "~/components/Pagination";
+import { Pagination } from "~/transactions/Pagination";
 import { Dropdown } from "~/components/Dropdown";
 import { Funnel, FileArrowDown } from "@phosphor-icons/react";
 import { TransactionTable } from "./TransactionTable";
