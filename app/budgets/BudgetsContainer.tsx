@@ -1,5 +1,9 @@
-import { SpendingSummaryCard } from "./SpendingSummaryCard";
 import { Plus } from "@phosphor-icons/react";
+import { EntertainmentSection } from "./EntertainmentSection";
+import { SpendingSummarySection } from "./SpendingSummarySection";
+import { BillsSection } from "./BillsSection";
+import { DiningOutSection } from "./DiningOutSection";
+import { PersonalCareSection } from "./PersonalCareSection";
 
 export function BudgetsContainer() {
   return (
@@ -13,7 +17,15 @@ export function BudgetsContainer() {
           </div>
         </button>
       </div>
-      <SpendingSummaryCard />
+      <div className="grid sm:grid-cols-1 lg:grid-cols-5 gap-4 mt-8">
+        <SpendingSummarySection />
+        <div className="grid grid-cols-1 gap-4 col-span-3">
+          <EntertainmentSection />
+          <BillsSection />
+          <DiningOutSection />
+          <PersonalCareSection />
+        </div>
+      </div>
     </div>
   );
 }
