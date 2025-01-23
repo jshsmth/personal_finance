@@ -4,11 +4,7 @@ import { classNames } from "~/utils/classNames";
 
 export function SpendingSummarySection() {
   return (
-    <Card
-      height="h-[42em]"
-      backgroundColor="bg-white"
-      className="col-span-2"
-    >
+    <Card height="h-[41rem]" backgroundColor="bg-white" className="col-span-2">
       <BudgetPieChart />
       <div className="mt-6">
         <h2 className="text-preset-2 font-semibold mb-6">Spending Summary</h2>
