@@ -21,9 +21,7 @@ export function EntertainmentSection() {
         <CategoryCard category="Spent" amount={15} color="secondary-green" />
         <CategoryCard category="Remaining" amount={35} color="beige-100" />
       </div>
-      <div className="h-[15.875rem] bg-beige-100 rounded-md">
-        CONTENT
-      </div>
+      <div className="h-[15.875rem] bg-beige-100 rounded-md">CONTENT</div>
     </Card>
   );
 }
@@ -36,19 +34,19 @@ interface CategoryCardProps {
 
 export function CategoryCard({ category, amount, color }: CategoryCardProps) {
   const colorClasses = {
-    'secondary-green': 'border-l-secondary-green',
-    'secondary-cyan': 'border-l-secondary-cyan',
-    'secondary-yellow': 'border-l-secondary-yellow',
-    'secondary-navy': 'border-l-secondary-navy',
-    'beige-100': 'border-l-beige-100',
+    "secondary-green": "border-l-secondary-green",
+    "secondary-cyan": "border-l-secondary-cyan",
+    "secondary-yellow": "border-l-secondary-yellow",
+    "secondary-navy": "border-l-secondary-navy",
+    "beige-100": "border-l-beige-100",
   };
 
   return (
     <div
       className={classNames(
-        'bg-white rounded-sm h-[2.688rem]',
-        'border-l-4',
-        colorClasses[color as keyof typeof colorClasses]
+        "bg-white rounded-sm h-[2.688rem]",
+        "border-l-4",
+        colorClasses[color as keyof typeof colorClasses],
       )}
     >
       <div className="pl-4">
