@@ -5,14 +5,14 @@ import { classNames } from "~/utils/classNames";
 export function SpendingSummarySection() {
   return (
     <Card
-      height="h-[37.438rem]"
+      height="h-[42em]"
       backgroundColor="bg-white"
       className="col-span-2"
     >
       <BudgetPieChart />
       <div className="mt-6">
         <h2 className="text-preset-2 font-semibold mb-6">Spending Summary</h2>
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 mt-6">
           <SpendingSummaryItem
             color="secondary-green"
             category="Entertainment"
@@ -60,7 +60,7 @@ export function SpendingSummaryItem({
   return (
     <div
       className={classNames(
-        "flex justify-between relative pl-4",
+        "flex justify-between relative pl-4 pb-4",
         hasBorder ? "border-b border-grey-100" : "",
         "before:content-[''] before:block before:absolute before:h-[85%] before:w-1 before:rounded-full before:-ml-4",
         `before:bg-${color}`,
