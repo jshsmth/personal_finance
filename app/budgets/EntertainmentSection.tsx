@@ -1,4 +1,5 @@
 import { Card } from "~/components/Card";
+import { classNames } from "~/utils/classNames";
 
 export function EntertainmentSection() {
   return (
@@ -16,6 +17,44 @@ export function EntertainmentSection() {
           className="h-6 rounded-sm bg-secondary-green"
         />
       </div>
+      <div className="grid grid-cols-2 gap-4 mt-4 mb-5">
+        <CategoryCard category="Spent" amount={15} color="secondary-green" />
+        <CategoryCard category="Remaining" amount={35} color="beige-100" />
+      </div>
+      <div className="h-[15.875rem] bg-beige-100 rounded-md">
+        CONTENT
+      </div>
     </Card>
+  );
+}
+
+interface CategoryCardProps {
+  category: string;
+  amount: number;
+  color: string;
+}
+
+export function CategoryCard({ category, amount, color }: CategoryCardProps) {
+  const colorClasses = {
+    'secondary-green': 'border-l-secondary-green',
+    'secondary-cyan': 'border-l-secondary-cyan',
+    'secondary-yellow': 'border-l-secondary-yellow',
+    'secondary-navy': 'border-l-secondary-navy',
+    'beige-100': 'border-l-beige-100',
+  };
+
+  return (
+    <div
+      className={classNames(
+        'bg-white rounded-sm h-[2.688rem]',
+        'border-l-4',
+        colorClasses[color as keyof typeof colorClasses]
+      )}
+    >
+      <div className="pl-4">
+        <p className="text-preset-5 text-grey-500">{category}</p>
+        <p className="text-preset-4 font-bold text-grey-900">${amount}</p>
+      </div>
+    </div>
   );
 }
