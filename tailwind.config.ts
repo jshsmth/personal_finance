@@ -2,6 +2,14 @@ import type { Config } from "tailwindcss";
 
 export default {
   content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
+  safelist: [
+    "before:bg-secondary-green",
+    "before:bg-secondary-cyan",
+    "before:bg-secondary-yellow",
+    "before:bg-secondary-navy",
+    "before:bg-secondary-red",
+    "before:bg-secondary-purple",
+  ],
   theme: {
     colors: {
       beige: {
