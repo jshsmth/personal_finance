@@ -7,7 +7,7 @@ import { useAtomValue } from "jotai";
 export function BillsSection() {
   return (
     <Card height="h-[31.875rem]" backgroundColor="bg-white">
-          <div className="flex items-center gap-2 mb-5">
+      <div className="flex items-center gap-2 mb-5">
         <div className="w-4 h-4 rounded-full bg-secondary-cyan"></div>
         <h2 className="text-preset-2 font-semibold">Bills</h2>
       </div>
@@ -32,7 +32,6 @@ export function BillsSection() {
   );
 }
 
-
 export function BillsTable() {
   const appData = useAtomValue(appDataAtom);
   const billsTransactions = appData.transactions.filter(
@@ -45,48 +44,46 @@ export function BillsTable() {
           <div className="inline-block min-w-full align-middle sm:px-6 lg:px-0">
             <table className="min-w-full">
               <tbody className="divide-y divide-grey-500/25">
-                {billsTransactions
-                  .slice(0, 3)
-                  .map((transaction, index) => {
-                    const avatarPath =
-                      "/app" +
-                      (transaction.avatar.startsWith("./")
-                        ? transaction.avatar.slice(1)
-                        : transaction.avatar);
-                    return (
-                      <tr key={index}>
-                        <td className="py-4 pr-3 m:pl-0">
-                          <div className="text-preset-4 items-center flex gap-4">
-                            <img
-                              alt={transaction.name}
-                              src={avatarPath}
-                              className="size-8 rounded-full"
-                            />
-                            <p className="text-grey-900 text-preset-5 font-semibold">
-                              {transaction.name}
-                            </p>
-                          </div>
-                        </td>
-                        <td className="px-3 py-0 text-right">
-                          <p className="text-grey-900 font-semibold text-preset-5 mb-1">
-                            {transaction.amount >= 0 ? "$" : "-$"}
-                            {Math.abs(transaction.amount).toFixed(2)}
+                {billsTransactions.slice(0, 3).map((transaction, index) => {
+                  const avatarPath =
+                    "/app" +
+                    (transaction.avatar.startsWith("./")
+                      ? transaction.avatar.slice(1)
+                      : transaction.avatar);
+                  return (
+                    <tr key={index}>
+                      <td className="py-4 pr-3 m:pl-0">
+                        <div className="text-preset-4 items-center flex gap-4">
+                          <img
+                            alt={transaction.name}
+                            src={avatarPath}
+                            className="size-8 rounded-full"
+                          />
+                          <p className="text-grey-900 text-preset-5 font-semibold">
+                            {transaction.name}
                           </p>
+                        </div>
+                      </td>
+                      <td className="px-3 py-0 text-right">
+                        <p className="text-grey-900 font-semibold text-preset-5 mb-1">
+                          {transaction.amount >= 0 ? "$" : "-$"}
+                          {Math.abs(transaction.amount).toFixed(2)}
+                        </p>
 
-                          <p className="text-grey-500 text-preset-5">
-                            {new Date(transaction.date).toLocaleDateString(
-                              "en-GB",
-                              {
-                                day: "numeric",
-                                month: "short",
-                                year: "numeric",
-                              },
-                            )}
-                          </p>
-                        </td>
-                      </tr>
-                    );
-                  })}
+                        <p className="text-grey-500 text-preset-5">
+                          {new Date(transaction.date).toLocaleDateString(
+                            "en-GB",
+                            {
+                              day: "numeric",
+                              month: "short",
+                              year: "numeric",
+                            },
+                          )}
+                        </p>
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
