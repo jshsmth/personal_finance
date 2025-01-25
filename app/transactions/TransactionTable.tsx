@@ -7,7 +7,7 @@ export function TransactionTable() {
     <div className="mt-8 flow-root">
       <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-          <table className="min-w-full divide-gray-300">
+          <table className="min-w-full divide-grey-300">
             <thead className="border-b border-grey-100">
               <tr>
                 <th

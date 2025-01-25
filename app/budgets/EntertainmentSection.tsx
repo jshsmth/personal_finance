@@ -1,5 +1,8 @@
 import { Card } from "~/components/Card";
-import { classNames } from "~/utils/classNames";
+import { SectionHeader } from "./components/SectionHeader";
+import { CategoryCard } from "./components/CategoryCard";
+import { useAtomValue } from "jotai";
+import { appDataAtom } from "~/jotai/appDataAtom";
 
 export function EntertainmentSection() {
   return (
@@ -21,37 +24,72 @@ export function EntertainmentSection() {
         <CategoryCard category="Spent" amount={15} color="secondary-green" />
         <CategoryCard category="Remaining" amount={35} color="beige-100" />
       </div>
-      <div className="h-[15.875rem] bg-beige-100 rounded-md">CONTENT</div>
+      <div className="h-[15.875rem] bg-beige-100 rounded-md p-5">
+        <SectionHeader title="Lastest Spending" buttonText="See All" />
+        <EntertainmentTable />
+      </div>
     </Card>
   );
 }
 
-interface CategoryCardProps {
-  category: string;
-  amount: number;
-  color: string;
-}
-
-export function CategoryCard({ category, amount, color }: CategoryCardProps) {
-  const colorClasses = {
-    "secondary-green": "border-l-secondary-green",
-    "secondary-cyan": "border-l-secondary-cyan",
-    "secondary-yellow": "border-l-secondary-yellow",
-    "secondary-navy": "border-l-secondary-navy",
-    "beige-100": "border-l-beige-100",
-  };
-
+export default function EntertainmentTable() {
+  const appData = useAtomValue(appDataAtom);
+  const entertainmentTransactions = appData.transactions.filter(
+    (transaction) => transaction.category === "Entertainment",
+  );
   return (
-    <div
-      className={classNames(
-        "bg-white rounded-sm h-[2.688rem]",
-        "border-l-4",
-        colorClasses[color as keyof typeof colorClasses],
-      )}
-    >
-      <div className="pl-4">
-        <p className="text-preset-5 text-grey-500">{category}</p>
-        <p className="text-preset-4 font-bold text-grey-900">${amount}</p>
+    <div className="px-4 sm:px-6 lg:px-5">
+      <div>
+        <div className="-mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div className="inline-block min-w-full align-middle sm:px-6 lg:px-8">
+            <table className="min-w-full">
+              <tbody className="divide-y divide-grey-500/25">
+                {entertainmentTransactions
+                  .slice(0, 3)
+                  .map((transaction, index) => {
+                    const avatarPath =
+                      "/app" +
+                      (transaction.avatar.startsWith("./")
+                        ? transaction.avatar.slice(1)
+                        : transaction.avatar);
+                    return (
+                      <tr key={index}>
+                        <td className="py-4 pr-3 m:pl-0">
+                          <div className="text-preset-4 items-center flex gap-4">
+                            <img
+                              alt={transaction.name}
+                              src={avatarPath}
+                              className="size-8 rounded-full"
+                            />
+                            <p className="text-grey-900 text-preset-5 font-semibold">
+                              {transaction.name}
+                            </p>
+                          </div>
+                        </td>
+                        <td className="px-3 py-0 text-right">
+                          <p className="text-grey-900 font-semibold text-preset-5 mb-1">
+                            {transaction.amount >= 0 ? "$" : "-$"}
+                            {Math.abs(transaction.amount).toFixed(2)}
+                          </p>
+
+                          <p className="text-grey-500 text-preset-5">
+                            {new Date(transaction.date).toLocaleDateString(
+                              "en-GB",
+                              {
+                                day: "numeric",
+                                month: "short",
+                                year: "numeric",
+                              },
+                            )}
+                          </p>
+                        </td>
+                      </tr>
+                    );
+                  })}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   );
