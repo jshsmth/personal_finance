@@ -41,7 +41,7 @@ export function EntertainmentTable() {
     <div className="px-4 sm:px-6 lg:px-5">
       <div>
         <div className="-mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
-          <div className="inline-block min-w-full align-middle sm:px-6 lg:px-0">
+          <div className="inline-block min-w-full align-middle sm:px-6 lg:px-4">
             <table className="min-w-full">
               <tbody className="divide-y divide-grey-500/25">
                 {entertainmentTransactions
