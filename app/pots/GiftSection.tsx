@@ -19,7 +19,7 @@ export function GiftSection() {
       </div>
       <div className="overflow-hidden rounded-md bg-grey-100 mt-4">
         <div
-          style={{ width: "37.5%" }}
+          style={{ width: "66.6%" }}
           className="h-2 rounded-md bg-secondary-cyan"
         />
       </div>

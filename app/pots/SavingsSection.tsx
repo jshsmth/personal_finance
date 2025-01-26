@@ -19,7 +19,7 @@ export function SavingsSection() {
       </div>
       <div className="overflow-hidden rounded-md bg-grey-100 mt-4">
         <div
-          style={{ width: "37.5%" }}
+          style={{ width: "7.95%" }}
           className="h-2 rounded-md bg-secondary-green"
         />
       </div>
