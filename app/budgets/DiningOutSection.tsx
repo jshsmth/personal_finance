@@ -3,13 +3,19 @@ import { CategoryCard } from "./components/CategoryCard";
 import { SectionHeader } from "./components/SectionHeader";
 import { appDataAtom } from "~/jotai/appDataAtom";
 import { useAtomValue } from "jotai";
+import { DotsThree } from "@phosphor-icons/react";
 
 export function DiningOutSection() {
   return (
     <Card height="h-[31.875rem]" backgroundColor="bg-white">
-      <div className="flex items-center gap-2 mb-5">
-        <div className="w-4 h-4 rounded-full bg-secondary-yellow"></div>
-        <h2 className="text-preset-2 font-semibold">Dining Out</h2>
+      <div className="flex items-center justify-between mb-5">
+        <div className="flex items-center gap-2">
+          <div className="w-4 h-4 rounded-full bg-secondary-yellow"></div>
+          <h2 className="text-preset-2 font-semibold">Dining Out</h2>
+        </div>
+        <div className="rounded-full hover:bg-grey-100 cursor-pointer">
+          <DotsThree size={30} className="text-grey-300 hover:text-grey-500" />
+        </div>
       </div>
       <p className="text-preset-4 text-grey-500 mb-4 font-normal">
         Maximum of $75.00
