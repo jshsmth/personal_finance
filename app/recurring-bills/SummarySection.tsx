@@ -36,7 +36,7 @@ function SummaryRow({
       className={`flex justify-between ${hasBorder ? "border-b border-grey-100 py-3" : "py-3"}`}
     >
       <p
-        className={`text-preset-5 ${isOverdue ? "text-secondary-red font-semibold" : "text-grey-500"}`}
+        className={`text-preset-5 ${isOverdue ? "text-secondary-red" : "text-grey-500"}`}
       >
         {title}
       </p>

@@ -23,7 +23,7 @@ export function TransactionsContainer() {
         >
           <div className="flex items-center justify-between">
             <div className="sm:grow sm:mr-4 md:mr-0 md:grow-[0.2]">
-              <SearchInput />
+              <SearchInput placeholder="Search transaction" />
             </div>
             <div className="flex items-center gap-4">
               <Dropdown

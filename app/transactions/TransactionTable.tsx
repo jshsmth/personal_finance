@@ -37,14 +37,14 @@ export function TransactionTable() {
               </tr>
             </thead>
             <tbody className="divide-y divide-grey-100 bg-white">
-              {appData.transactions.map((transaction) => {
+              {appData.transactions.map((transaction, index) => {
                 const avatarPath =
                   "/app" +
                   (transaction.avatar.startsWith("./")
                     ? transaction.avatar.slice(1)
                     : transaction.avatar);
                 return (
-                  <tr key={transaction.name}>
+                  <tr key={index}>
                     <td className="whitespace-nowrap py-5 pl-4 pr-3 text-sm sm:pl-0">
                       <div className="flex items-center">
                         <div className="text-preset-4 font-bold shrink-0">
