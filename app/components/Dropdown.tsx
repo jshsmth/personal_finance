@@ -1,6 +1,7 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { CaretDown, type IconWeight } from "@phosphor-icons/react";
 import type { ComponentType } from "react";
+import { classNames } from "~/utils/classNames";
 
 interface DropdownProps {
   label?: string;
@@ -52,16 +53,22 @@ export function Dropdown({
           className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
         >
           <div className="py-1">
-            {items.map((item) => (
-              <MenuItem key={item}>
-                <button
-                  onClick={() => onSelect?.(item)}
-                  className="block w-full px-4 py-2 text-left text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none"
-                >
-                  {item}
-                </button>
-              </MenuItem>
-            ))}
+            {items.map((item, index) => {
+              const isLastItem = index === items.length - 1;
+              return (
+                <MenuItem key={item}>
+                  <button
+                    onClick={() => onSelect?.(item)}
+                    className={classNames(
+                      "block w-full px-4 py-2.5 text-left text-preset-4 text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none hover:font-semibold",
+                      isLastItem ? undefined : "border-b-[1px] border-grey-100",
+                    )}
+                  >
+                    {item}
+                  </button>
+                </MenuItem>
+              );
+            })}
           </div>
         </MenuItems>
       </Menu>
