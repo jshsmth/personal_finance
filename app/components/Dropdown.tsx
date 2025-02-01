@@ -31,7 +31,7 @@ export function Dropdown({
       )}
       <Menu as="div" className="relative inline-block text-left">
         <div>
-          <MenuButton className="md:inline-flex md:w-full md:items-center md:justify-center md:gap-x-1.5 md:rounded-md md:bg-white md:px-4 md:py-3 md:text-preset-4 md:text-grey-900 md:shadow-sm md:ring-1 md:ring-inset md:ring-beige-500 md:hover:bg-gray-50">
+          <MenuButton className="md:inline-flex md:w-full md:items-center md:justify-center md:gap-x-1.5 md:rounded-md md:bg-white md:px-4 md:py-3 md:text-preset-4 md:text-grey-900 md:shadow-xs md:ring-1 md:ring-inset md:ring-beige-500 md:hover:bg-gray-50">
             {MobileIcon && (
               <MobileIcon
                 className="block md:hidden text-grey-900"
@@ -50,7 +50,7 @@ export function Dropdown({
 
         <MenuItems
           transition
-          className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
+          className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-leave:duration-75 data-enter:ease-out data-leave:ease-in"
         >
           <div className="py-1">
             {items.map((item, index) => {
@@ -60,7 +60,7 @@ export function Dropdown({
                   <button
                     onClick={() => onSelect?.(item)}
                     className={classNames(
-                      "block w-full px-4 py-2.5 text-left text-preset-4 text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900 data-[focus]:outline-none hover:font-semibold",
+                      "block w-full px-4 py-2.5 text-left text-preset-4 text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden hover:font-semibold",
                       isLastItem ? undefined : "border-b-[1px] border-grey-100",
                     )}
                   >

@@ -8,7 +8,7 @@ export function Pagination({
   totalPages: number;
 }) {
   return (
-    <nav className="flex items-center justify-between px-4 py-8 sm:px-0 bg-white rounded-b-md shadow">
+    <nav className="flex items-center justify-between px-4 py-8 sm:px-0 bg-white rounded-b-md shadow-sm">
       <div className="flex w-0 flex-1 ml-4">
         <button
           onClick={() => {}}

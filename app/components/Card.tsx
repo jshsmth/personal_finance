@@ -16,7 +16,7 @@ export function Card({
   return (
     <div
       className={classNames(
-        "overflow-hidden rounded-lg shadow w-full",
+        "overflow-hidden rounded-lg shadow-sm w-full",
         height,
         backgroundColor,
         className,

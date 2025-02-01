@@ -1,9 +1,3 @@
-import resolveConfig from "tailwindcss/resolveConfig";
-import tailwindConfig from "../../tailwind.config";
-
-const fullConfig = resolveConfig(tailwindConfig);
-export const colors = fullConfig.theme.colors;
-
 export const data = [
   { name: "Group A", value: 120 },
   { name: "Group B", value: 25 },
@@ -12,8 +6,8 @@ export const data = [
 ];
 
 export const COLORS = [
-  colors.secondary.cyan,
-  colors.secondary.green,
-  colors.secondary.navy,
-  colors.secondary.yellow,
+  "#82C9D7", // cyan
+  "#277C78", // green
+  "#626070", // navy
+  "#F2CDAC", // yellow
 ];

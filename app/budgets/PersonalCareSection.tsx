@@ -23,7 +23,7 @@ export function PersonalCareSection() {
       <div className="overflow-hidden rounded-md bg-grey-100 p-1">
         <div
           style={{ width: "20%" }}
-          className="h-6 rounded-sm bg-secondary-navy"
+          className="h-6 rounded-xs bg-secondary-navy"
         />
       </div>
       <div className="grid grid-cols-2 gap-4 mt-4 mb-5">

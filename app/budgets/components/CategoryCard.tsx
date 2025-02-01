@@ -18,7 +18,7 @@ export function CategoryCard({ category, amount, color }: CategoryCardProps) {
   return (
     <div
       className={classNames(
-        "bg-white rounded-sm h-[2.688rem]",
+        "bg-white rounded-xs h-[2.688rem]",
         "border-l-4",
         colorClasses[color as keyof typeof colorClasses],
       )}

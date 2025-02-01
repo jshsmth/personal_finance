@@ -23,7 +23,7 @@ export function EntertainmentSection() {
       <div className="overflow-hidden rounded-md bg-grey-100 p-1">
         <div
           style={{ width: "37.5%" }}
-          className="h-6 rounded-sm bg-secondary-green"
+          className="h-6 rounded-xs bg-secondary-green"
         />
       </div>
       <div className="grid grid-cols-2 gap-4 mt-4 mb-5">

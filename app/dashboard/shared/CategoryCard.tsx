@@ -7,7 +7,7 @@ interface CategoryCardProps {
 export function CategoryCard({ category, amount, theme }: CategoryCardProps) {
   return (
     <div
-      className="bg-white rounded-sm h-[2.688rem]"
+      className="bg-white rounded-xs h-[2.688rem]"
       style={{ borderLeft: `4px solid ${theme}` }}
     >
       <div className="pl-4">
