@@ -72,7 +72,7 @@ export function Sidebar({ children }: SidebarProps) {
                       className={classNames(
                         isActive
                           ? "bg-beige-100 text-beige-500 border-l-4 border-secondary-green text-preset-3"
-                          : "text-grey-300 hover:bg-gray-300 hover:text-white text-preset-3",
+                          : "text-grey-300 hover:bg-grey-900 hover:text-beige-100 hover:border-l-4 hover:border-secondary-green text-preset-3",
                         "group flex gap-x-4 rounded-r-lg px-6 py-4 text-base/6 font-medium transition-all duration-200 ease-in-out",
                       )}
                     >
@@ -113,7 +113,7 @@ export function Sidebar({ children }: SidebarProps) {
                       "flex flex-col items-center gap-1 py-2 px-4 transition-all duration-200 ease-in-out",
                       isActive
                         ? "text-grey-900 bg-beige-100 border-b-4 border-secondary-green rounded-t-md w-[6.5rem] whitespace-nowrap"
-                        : "text-grey-300",
+                        : "text-grey-300 hover:text-beige-100 hover:bg-grey-900 hover:border-b-4 hover:border-secondary-green w-[6.5rem] whitespace-nowrap rounded-t-md",
                     )}
                   >
                     <span
@@ -152,7 +152,7 @@ export function Sidebar({ children }: SidebarProps) {
                       "flex p-3 transition-all duration-200 ease-in-out",
                       isActive
                         ? "text-grey-900 bg-beige-100 border-b-4 border-secondary-green rounded-t-md w-[4.163rem] items-center justify-center"
-                        : "text-grey-300 items-center justify-center",
+                        : "text-grey-300 hover:text-beige-100 hover:bg-grey-900 hover:border-b-4 hover:border-secondary-green items-center justify-center w-[4.163rem] rounded-t-md",
                     )}
                   >
                     <span
