@@ -1,8 +1,18 @@
 import { appDataAtom } from "~/jotai/appDataAtom";
 import { useAtomValue } from "jotai";
 
-export function TransactionTable() {
+interface TransactionTableProps {
+  currentPage: number;
+  itemsPerPage?: number;
+}
+
+export function TransactionTable({ currentPage, itemsPerPage = 10 }: TransactionTableProps) {
   const appData = useAtomValue(appDataAtom);
+  
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const paginatedTransactions = appData.transactions.slice(startIndex, endIndex);
+
   return (
     <div className="mt-8 flow-root">
       <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -37,14 +47,14 @@ export function TransactionTable() {
               </tr>
             </thead>
             <tbody className="divide-y divide-grey-100 bg-white">
-              {appData.transactions.map((transaction, index) => {
+              {paginatedTransactions.map((transaction, index) => {
                 const avatarPath =
                   "/app" +
                   (transaction.avatar.startsWith("./")
                     ? transaction.avatar.slice(1)
                     : transaction.avatar);
                 return (
-                  <tr key={index}>
+                  <tr key={startIndex + index}>
                     <td className="whitespace-nowrap py-5 pl-4 pr-3 text-sm sm:pl-0">
                       <div className="flex items-center">
                         <div className="text-preset-4 font-bold shrink-0">

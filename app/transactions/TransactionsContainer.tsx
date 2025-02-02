@@ -6,11 +6,24 @@ import { Pagination } from "~/transactions/Pagination";
 import { Dropdown } from "~/components/Dropdown";
 import { Funnel, FileArrowDown } from "@phosphor-icons/react";
 import { TransactionTable } from "./TransactionTable";
+import { appDataAtom } from "~/jotai/appDataAtom";
+import { useAtomValue } from "jotai";
 
 export function TransactionsContainer() {
+  const appData = useAtomValue(appDataAtom);
   const [selectedSort, setSelectedSort] = React.useState("Latest");
   const [selectedCategory, setSelectedCategory] =
     React.useState("All Transactions");
+  const [currentPage, setCurrentPage] = React.useState(1);
+  const totalPages = Math.ceil(appData.transactions.length / 10);
+
+  const handlePageChange = (newPage: number) => {
+    if (newPage >= 1 && newPage <= totalPages) {
+      setCurrentPage(newPage);
+    }
+  };
+
+
 
   return (
     <React.Fragment>
@@ -61,10 +74,14 @@ export function TransactionsContainer() {
             </div>
           </div>
           <div>
-            <TransactionTable />
+            <TransactionTable currentPage={currentPage} />
           </div>
         </Card>
-        <Pagination currentPage={2} totalPages={5} />
+        <Pagination 
+          currentPage={currentPage} 
+          totalPages={totalPages} 
+          onPageChange={handlePageChange}
+        />
       </div>
     </React.Fragment>
   );

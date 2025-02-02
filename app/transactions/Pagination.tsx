@@ -3,16 +3,19 @@ import { CaretLeft, CaretRight } from "@phosphor-icons/react";
 export function Pagination({
   currentPage,
   totalPages,
+  onPageChange,
 }: {
   currentPage: number;
   totalPages: number;
+  onPageChange: (page: number) => void;
 }) {
   return (
     <nav className="flex items-center justify-between px-4 py-8 sm:px-0 bg-white rounded-b-md shadow-sm">
       <div className="flex w-0 flex-1 ml-4">
         <button
-          onClick={() => {}}
-          className="inline-flex items-center justify-center px-4 py-2 border border-beige-500 hover:border-beige-500 hover:bg-grey-900 rounded-md hover:text-white text-grey-500 font-normal text-preset-4"
+          onClick={() => onPageChange(currentPage - 1)}
+          disabled={currentPage === 1}
+          className="inline-flex items-center justify-center px-4 py-2 border border-beige-500 hover:border-beige-500 hover:bg-grey-900 rounded-md hover:text-white text-grey-500 font-normal text-preset-4 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <div className="flex items-center justify-center gap-4">
             <CaretLeft weight="fill" size={16} />
@@ -25,7 +28,7 @@ export function Pagination({
           (pageNumber) => (
             <button
               key={pageNumber}
-              onClick={() => {}}
+              onClick={() => onPageChange(pageNumber)}
               aria-current={pageNumber === currentPage ? "page" : undefined}
               className={`inline-flex items-center justify-center px-4 py-2.5 text-sm font-medium rounded-md ${
                 pageNumber === currentPage
@@ -40,8 +43,9 @@ export function Pagination({
       </div>
       <div className="flex w-0 flex-1 justify-end mr-4">
         <button
-          onClick={() => {}}
-          className="inline-flex items-center justify-center px-4 py-2 border border-beige-500 hover:border-beige-500 hover:bg-grey-900 rounded-md hover:text-white text-grey-500 font-normal text-preset-4"
+          onClick={() => onPageChange(currentPage + 1)}
+          disabled={currentPage === totalPages}
+          className="inline-flex items-center justify-center px-4 py-2 border border-beige-500 hover:border-beige-500 hover:bg-grey-900 rounded-md hover:text-white text-grey-500 font-normal text-preset-4 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <div className="flex items-center justify-center gap-4">
             <span className="hidden md:block">Next</span>
