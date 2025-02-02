@@ -23,8 +23,6 @@ export function TransactionsContainer() {
     }
   };
 
-
-
   return (
     <React.Fragment>
       <div>
@@ -77,9 +75,9 @@ export function TransactionsContainer() {
             <TransactionTable currentPage={currentPage} />
           </div>
         </Card>
-        <Pagination 
-          currentPage={currentPage} 
-          totalPages={totalPages} 
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
           onPageChange={handlePageChange}
         />
       </div>

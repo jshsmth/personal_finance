@@ -46,7 +46,7 @@ interface SectionHeaderProps {
 
 function SectionHeader({ title, buttonText }: SectionHeaderProps) {
   const navigate = useNavigate();
-  
+
   const getRouteForSection = (title: string) => {
     switch (title.toLowerCase()) {
       case "pots":

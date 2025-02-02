@@ -6,12 +6,18 @@ interface TransactionTableProps {
   itemsPerPage?: number;
 }
 
-export function TransactionTable({ currentPage, itemsPerPage = 10 }: TransactionTableProps) {
+export function TransactionTable({
+  currentPage,
+  itemsPerPage = 10,
+}: TransactionTableProps) {
   const appData = useAtomValue(appDataAtom);
-  
+
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const paginatedTransactions = appData.transactions.slice(startIndex, endIndex);
+  const paginatedTransactions = appData.transactions.slice(
+    startIndex,
+    endIndex,
+  );
 
   return (
     <div className="mt-8 flow-root">
