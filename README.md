@@ -4,15 +4,14 @@
 
 ### Overview
 
-This repository contains my implementation of the Personal Finance App challenge from [Frontend Mentor](https://www.frontendmentor.io/home). The challenge provides a comprehensive Figma design, and my goal is to recreate it with pixel-perfect accuracy while adding interactive functionality. As a Guru-level challenge, it tests my ability to transform a complex design into a fully functional web application.
+This is a frontend implementation of the Personal Finance App challenge from [Frontend Mentor](https://www.frontendmentor.io/home). The project focuses on transforming a provided Figma design into a pixel-perfect, interactive web application.
 
-Working from the provided Figma design, I'm focusing on:
+Key aspects:
 
-- Precise implementation of the design system (colors, typography, spacing)
-- Building a responsive layout that works across all devices
-- Creating smooth interactions and transitions
-- Implementing complex UI components like charts and data grids
-- Ensuring accessibility standards are met
+- Implementing the design system (colors, typography, spacing)
+- Responsive layout across all devices
+- Interactive UI components including charts and data grids
+- Modern frontend development practices
 
 This project is part of my 2025 goal to maintain and enhance my frontend development skills, pushing my boundaries in modern web development practices.
 
