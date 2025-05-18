@@ -6,7 +6,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig({
   plugins: [reactRouter(), tsconfigPaths(), tailwindcss()],
   build: {
-    outDir: 'dist',
+    outDir: 'build',
     ssr: true
   }
 });
